@@ -1,2 +1,4 @@
-# arduino-projects
-Arduino Sketches
+# Arduino Sketches
+
+- Light or dark activated switch with rotary encoder control
+
