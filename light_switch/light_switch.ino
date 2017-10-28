@@ -7,11 +7,11 @@
 #include <EEPROM.h>
 
 // Pins for photoresistor, relay and encoder
-const int sensorPin = 3; // A3
-const int relayPin = 4; // D4
-const int encoderA = 2; // D2
-const int encoderB = 5; // D5
-const int modeSwitchPin = 3; // D3
+const int sensorPin = A3; // A3
+const int relayPin = D4; // D4
+const int encoderA = D2; // D2
+const int encoderB = D5; // D5
+const int modeSwitchPin = D3; // D3
 
 // Change that will be considered significant in read value
 const int valueThreshold = 20;
