@@ -4,6 +4,10 @@
    Version 1.0
 
    Copyright (C) 2018 One Transistor <https://www.onetransistor.eu>
+   
+   More information at:
+   https://www.onetransistor.eu/2018/11/count-time-arduino-clock-no-rtc.html
+   https://ro.onetransistor.eu/2018/11/ceas-arduino-fara-modul-rtc.html
 
    Developed on Arduino Uno compatible board (ATmega328p) with LCD & keypad
    shield (16x2 HD44780 LCD and analog keypad).
