@@ -15,9 +15,11 @@
 // Write a byte to ST7920 in SPI mode
 void ST7920_Write(boolean command, byte lcdData) {
   SPI.beginTransaction(SPISettings(200000UL, MSBFIRST, SPI_MODE3));
+  digitalWrite(10, HIGH);
   SPI.transfer(command ? 0xFA : 0xF8);
   SPI.transfer(lcdData & 0xF0);
   SPI.transfer((lcdData << 4) & 0xF0);
+  digitalWrite(10, LOW);
   SPI.endTransaction();
 }
 
@@ -35,6 +37,8 @@ void ST7920_Init() {
 void setup() {
   pinMode(LCD_RST, OUTPUT);
   SPI.begin();
+  pinMode(10, OUTPUT); // CS pin
+  digitalWrite(10, LOW); // inactive
 
   ST7920_Init();
   ST7920_Write(LCD_COMMAND, 0x88);
