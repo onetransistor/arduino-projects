@@ -186,6 +186,7 @@ void countTime() {
   YY++;
   if ((YY % 4) == 0) daysOfMonth[1] = 29;
   else daysOfMonth[1] = 28;
+  if ((YY % 100) == 0) daysOfMonth[1] = 28;
   dispYear();
 }
 
@@ -290,16 +291,18 @@ void loop() {
           MM = (MM + 1) % 12;
           if (MM == 0) {
             wd = (wd + 6) % 7;
-            if ((YY % 4) == 0) wd = (wd + 6) % 7;
+            if ((YY % 4) == 0) wd = (wd + 5) % 7;
           }
           break;
         case 5:
           unsigned int days = 365;
           if ((YY % 4) == 0) days = 366;
+          if ((YY % 100) == 0) days = 365;
           wd = (wd + days) % 7;
           YY = (YY + 1) % 56;
           if ((YY % 4) == 0) daysOfMonth[1] = 29;
           else daysOfMonth[1] = 28;
+          if ((YY % 100) == 0) daysOfMonth[1] = 28;
           break;
       }
       dispAll();
@@ -309,4 +312,3 @@ void loop() {
     if (key != btnNONE) keyTime += 200; // delay next possible key press by 200ms
   }
 }
-
