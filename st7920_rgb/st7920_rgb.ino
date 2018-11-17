@@ -29,9 +29,11 @@ const int8_t KNOBDIR[] = {0, -1, 1, 0, 1, 0, 0, -1, -1, 0, 0, 1, 0, 1, -1, 0};
 // Write a byte to ST7920 in SPI mode
 void ST7920_Write(boolean command, byte lcdData) {
   SPI.beginTransaction(SPISettings(200000UL, MSBFIRST, SPI_MODE3));
+  digitalWrite(10, HIGH);
   SPI.transfer(command ? 0xFA : 0xF8);
   SPI.transfer(lcdData & 0xF0);
   SPI.transfer((lcdData << 4) & 0xF0);
+  digitalWrite(10, LOW);
   SPI.endTransaction();
 }
 
@@ -158,6 +160,8 @@ void setup() {
   pinMode(LED_BLU, OUTPUT);
 
   SPI.begin();
+  pinMode(10, OUTPUT);
+  digitalWrite(10, LOW);
 
   ST7920_Init();
 
