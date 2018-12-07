@@ -46,10 +46,12 @@ void displayDigit(uint16_t digit, bool dp = false) {
 }
 
 void refreshDisplay() {
-  displayDigit(number / pow(base, 3 - c_digit));
   for (byte i = 0; i < 4; i++)
-      digitalWrite(DIG_1 + i, (i == c_digit) ? LED_ON : LED_OFF);
-      
+    if (c_digit != i) digitalWrite(DIG_1 + i, LED_OFF); // turn off all the other digits
+
+  displayDigit(number / pow(base, 3 - c_digit)); // set segments of the digit
+  digitalWrite(DIG_1 + c_digit, LED_ON); // turn it on
+
   c_digit++;
   if (c_digit == 4) c_digit = 0;
 }
