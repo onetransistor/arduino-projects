@@ -196,29 +196,29 @@ void refreshDisplay() {
       digitalWrite(DIG_1, LED_OFF);
       digitalWrite(DIG_2, LED_OFF);
       digitalWrite(DIG_3, LED_OFF);
-      digitalWrite(DIG_4, LED_ON);
       displayDigit(number);
+      digitalWrite(DIG_4, LED_ON);
       break;
     case 2:
       digitalWrite(DIG_1, LED_OFF);
       digitalWrite(DIG_2, LED_OFF);
-      digitalWrite(DIG_3, LED_ON);
       digitalWrite(DIG_4, LED_OFF);
       displayDigit(number / base);
+      digitalWrite(DIG_3, LED_ON);
       break;
     case 1:
       digitalWrite(DIG_1, LED_OFF);
-      digitalWrite(DIG_2, LED_ON);
       digitalWrite(DIG_3, LED_OFF);
       digitalWrite(DIG_4, LED_OFF);
       displayDigit(number / base / base);
+      digitalWrite(DIG_2, LED_ON);
       break;
     case 0:
-      digitalWrite(DIG_1, LED_ON);
       digitalWrite(DIG_2, LED_OFF);
       digitalWrite(DIG_3, LED_OFF);
       digitalWrite(DIG_4, LED_OFF);
       displayDigit(number / base / base / base);
+      digitalWrite(DIG_1, LED_ON);
       break;
   }
 
