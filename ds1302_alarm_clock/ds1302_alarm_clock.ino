@@ -2,13 +2,13 @@
    Arduino Clock with alarm function and DS1302 RTC module
    Version 1.0
    Copyright (C) 2018 One Transistor <https://www.onetransistor.eu>
-   
+
    More information at:
    https://www.onetransistor.eu/2018/12/alarm-clock-with-ds1302-rtc.html
 
    Developed on Arduino Uno compatible board (ATmega328p) with LCD, DS1302
    module, active buzzer and 4 push buttons.
-   
+
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation, either version 3 of the License, or
@@ -305,6 +305,13 @@ void setAlVariable() {
       break;
     case 2: // alarm hour
       rtc_write_reg(0xC0, ae);
+      if (ae == 0) { // is disabled, do not ask for ah and am
+        setAlarm = 0;
+        rtc_write_reg(0x8E, 0x80); // protect writes
+        initTimeDisplay();
+        updateDisplay();
+        return;
+      }
 
       lcd.setCursor(6, 0);
       lcd.print("Hour");
