@@ -415,6 +415,8 @@ void loop() {
       if (alarmOn) {
         alarmOn = 0;
         digitalWrite(AL_BUZZ, LOW);
+        lcd.setCursor(0, 0); lcd.print("   ");
+        lcd.setCursor(13, 0); lcd.print("   ");
       }
       else {
         setAlarm++;
