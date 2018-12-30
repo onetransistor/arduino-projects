@@ -105,6 +105,10 @@ long chargeCapacitor(byte resistorPin) {
   // disconnect resistor
   pinMode(resistorPin, INPUT);
 
+  // set time adjustment
+  if (chargingTime < 500)
+    adjustment = 0 - chargingTime;
+
   // clear charging sign
   lcd.setCursor(15, 0);
   lcd.write(' ');
@@ -137,7 +141,6 @@ void performMeasurement(float &capacity, char &unit) {
     unit = 'n'; // switch to nanofarads
 
     if (chTime < 500) { // below 500 pF measurement is unreliable
-      adjustment = 0 - chTime;
       return;
     }
   }
