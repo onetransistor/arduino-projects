@@ -125,7 +125,7 @@ void showWebpage() {
   content += ctime(&now);
   content += "</p>";
   
-  content += "<p>For more information see <a href=\"https://ro.onetransistor.eu/2019/04/server-web-securizat-pe-nodemcu-esp8266.html\" target=\"_blank\">OneTransistor</a>.</p></body></html>";
+  content += "<p>For more information see <a href=\"https://www.onetransistor.eu/2019/04/https-server-on-esp8266-nodemcu.html\" target=\"_blank\">OneTransistor</a>.</p></body></html>";
 
   server.send(200, "text/html", content);
 }
