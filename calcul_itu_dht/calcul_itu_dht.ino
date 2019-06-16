@@ -15,7 +15,7 @@
 
 LiquidCrystal lcd(8, 9, 4, 5, 6, 7); // LCD conectat conform schemei shield-ului LCD
 DHT senzor(PIN_SENZOR, DHT22);
-float t, h;
+float t, h, ta;
 int itu;
 
 void setup() {
@@ -40,7 +40,20 @@ void setup() {
   lcd.print(" Calculator ITU ");
   lcd.setCursor(0, 1);
   lcd.print("  Senzor DHT22  ");
-  delay(2000);
+  delay(100);
+
+  // testare LED-uri
+  digitalWrite(LED_ALBASTRU, HIGH);
+  delay(300);
+  digitalWrite(LED_ALBASTRU, LOW);
+  digitalWrite(LED_GALBEN, HIGH);
+  delay(300);
+  digitalWrite(LED_GALBEN, LOW);
+  digitalWrite(LED_ROSU, HIGH);
+  delay(300);
+  digitalWrite(LED_ROSU, LOW);
+  
+  delay(1000);
   lcd.clear();
 }
 
@@ -49,6 +62,7 @@ void loop() {
   h = senzor.readHumidity();
   float i = (t * 1.8 + 32) - (0.55 - 0.0055 * h) * ((t * 1.8 + 32) - 58);
   itu = int(i);
+  ta = senzor.computeHeatIndex(t, h, false); // temperatura aparenta (resimtita)
 
   // indicare prin LED-uri
   if (itu <= 65) {
@@ -83,6 +97,13 @@ void loop() {
   lcd.setCursor(13, 1);
   lcd.print(int(h), DEC);
   lcd.print('%');
+
+  delay(2000);
+  lcd.setCursor(0, 1);
+  lcd.print(ta, 1);
+  lcd.print(char(223));
+  lcd.print('C');
+  lcd.print(" aparent  ");
  
-  delay(2500);
+  delay(2000);
 }
