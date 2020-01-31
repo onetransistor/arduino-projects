@@ -149,7 +149,7 @@ void setup() {
   serverHTTP.on("/", secureRedirect);
   serverHTTP.begin();
 
-  server.setRSACert(new BearSSL::X509List(serverCert), new BearSSL::PrivateKey(serverKey));
+  server.getServer().setRSACert(new BearSSL::X509List(serverCert), new BearSSL::PrivateKey(serverKey));
   server.on("/", showWebpage);
   server.begin();
   
