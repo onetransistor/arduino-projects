@@ -1,0 +1,14 @@
+B8:55:10	Zioncom Electronics (Shenzhen) Ltd.
+C8:3A:35	Tenda Technology Co., Ltd.
+04:8D:38	Netcore Technology Inc.
+E4:BE:ED	Netcore Technology Inc.
+10:FE:ED	TP-Link Technologies Co.,Ltd.
+90:F6:52	TP-Link Technologies Co.,Ltd.
+AC:84:C6	TP-Link Technologies Co.,Ltd.
+B0:48:7A	TP-Link Technologies Co.,Ltd.
+C4:6E:1F	TP-Link Technologies Co.,Ltd.
+F8:1A:67	TP-Link Technologies Co.,Ltd.
+6C:19:8F	D-Link International
+00:15:6D	Ubiquiti Networks Inc.
+64:6D:6C	Huawei Technologies Co.,Ltd
+80:8C:97	Kaonmedia CO., LTD.
