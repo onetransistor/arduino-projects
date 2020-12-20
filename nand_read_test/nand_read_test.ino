@@ -1,3 +1,12 @@
+/*********************************************************************
+
+    Read NAND device signature with Arduino Pro Mini
+    Schematic and more information at:
+    https://www.onetransistor.eu/2020/11/arduino-parallel-8x-nand-flash.html
+    https://www.onetransistor.eu/2020/12/read-nand-device-signature-arduino.html
+
+*********************************************************************/
+
 #define NAND_RB 2 // Read busy
 #define NAND_R  3 // Read Enable
 #define NAND_E  4 // Chip Enable
