@@ -441,7 +441,9 @@ void loop() {
       alarmSw = 1 - alarmSw;
       timeAlarm = current;
     }
-    else
+    else {
       digitalWrite(AL_BUZZ, LOW);
+      timeAlarm = current;
+    }
   }
 }
