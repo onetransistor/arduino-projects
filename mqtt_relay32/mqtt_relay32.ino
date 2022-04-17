@@ -5,7 +5,7 @@
 */
 
 #define MCU_ESP32 /* MCU_ESP8266 for ESP8266 boards or MCU_ESP32 for ESP32 */
-#define DEV_NAME "Pump2"
+#define DEV_NAME "Pump"
 #define DEV_TYPE "Switch"
 
 #ifdef MCU_ESP8266
