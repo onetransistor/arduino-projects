@@ -2,7 +2,7 @@
 
 433.92 MHz Weather station receiver for Nexus-TH compatible units
 More information at:
-https://www.onetransistor.eu/2024/01/receive-lpd433-weather-data-nexus.html
+https://www.onetransistor.eu/2024/01/receive-lpd433-weather-unit-nexus.html
 
 This sample code requires ESP8266 or AVR Arduino with 433.92 MHz receiver.
 Optional for ESP8266: 0.96" I2C OLED and MQTT functionality
